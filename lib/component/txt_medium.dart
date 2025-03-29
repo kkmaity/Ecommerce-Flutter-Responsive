@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:makemefine/utils/colors.dart';
 
 class TextMedium extends StatelessWidget {
   const TextMedium({super.key, required this.text});
@@ -9,10 +10,10 @@ class TextMedium extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-        color: Colors.black87,
-        fontWeight: FontWeight.w600,
+        color: AppColors.black20,
+        fontWeight: FontWeight.w400,
         fontSize: 18,
-        letterSpacing: 0.7,
+        letterSpacing: 0.5,
       ),
     );
   }

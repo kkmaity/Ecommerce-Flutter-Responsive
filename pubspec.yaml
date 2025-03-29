@@ -64,6 +64,13 @@ flutter:
     - assets/icon/favorite.png
     - assets/icon/manage_accounts.png
     - assets/icon/shopping_cart.png
+    - assets/images/jwel.png
+    - assets/icon/earrings.png
+    - assets/icon/jewelry.png
+    - assets/icon/necklace.png
+    - assets/icon/necklace1.png
+    - assets/icon/pearl_necklace.png
+    - assets/icon/wedding_ring.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

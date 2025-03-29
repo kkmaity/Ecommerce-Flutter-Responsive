@@ -11,11 +11,6 @@ class NavbarWeb extends StatelessWidget {
       child: Row(
         children: [
           Text("Shoppy",style: TextStyle(color: Colors.redAccent,fontSize: 24, fontWeight: FontWeight.w700),),
-          // SizedBox(
-          //   width: 120.00,
-          //   height: 45.00,
-          //   child: Image(image: AssetImage('icon/logo_small.png')),
-          // ),
           SizedBox(width: 10),
           TextMedium(text: 'Category'),
           SizedBox(width: 20),
