@@ -29,18 +29,18 @@ class Footer extends StatelessWidget {
           itemBuilder: (context, index) {
             if(index==0){
               return Container(
-               // color: AppColors.footerPink,
+                // color: AppColors.footerPink,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                  Text('SHOPPY',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 19,color: AppColors.white),),
-                  SizedBox(height: 10,),
-                  TextSmallWhite(text:'About us'),
-                  TextSmallWhite(text:'Blog'),
-                  TextSmallWhite(text:'Contact us' ),
-                  TextSmallWhite(text:'About Us')
-                ],),
+                    Text('SHOPPY',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 19,color: AppColors.white),),
+                    SizedBox(height: 10,),
+                    TextSmallWhite(text:'About us'),
+                    TextSmallWhite(text:'Blog'),
+                    TextSmallWhite(text:'Contact us' ),
+                    TextSmallWhite(text:'About Us')
+                  ],),
               );
             } if(index==1){
               return Container(
@@ -51,10 +51,10 @@ class Footer extends StatelessWidget {
                   children: [
                     Text('PRIVACY GUIDELINE',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 19,color: AppColors.white),),
                     SizedBox(height: 10,),
-                  TextSmallWhite(text:'Terms of use'),
-                  TextSmallWhite(text:'Privacy policy'),
+                    TextSmallWhite(text:'Terms of use'),
+                    TextSmallWhite(text:'Privacy policy'),
 
-                ],),
+                  ],),
               );
             }if(index==2){
               return Container(
@@ -65,11 +65,11 @@ class Footer extends StatelessWidget {
                   children: [
                     Text('SOCIAL',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 19,color: AppColors.white),),
                     SizedBox(height: 10,),
-                  TextSmallWhite(text:'Facebook'),
-                  TextSmallWhite(text:'Link-dn'),
-                  TextSmallWhite(text:'Youtube' ),
-                  TextSmallWhite(text:'X')
-                ],),
+                    TextSmallWhite(text:'Facebook'),
+                    TextSmallWhite(text:'Link-dn'),
+                    TextSmallWhite(text:'Youtube' ),
+                    TextSmallWhite(text:'X')
+                  ],),
               );
             }if(index==3){
               return Container(
@@ -81,10 +81,10 @@ class Footer extends StatelessWidget {
                     Text('CONTACT',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 19,color: AppColors.white),),
                     SizedBox(height: 10,),
                     TextSmallWhite(text:'131 Sarat Bose Road'),
-                  TextSmallWhite(text:'Kolkata 700101'),
-                  TextSmallWhite(text:'Email: abcdcompany@domain.com' ),
-                  TextSmallWhite(text:'Mob: 90847676674')
-                ],),
+                    TextSmallWhite(text:'Kolkata 700101'),
+                    TextSmallWhite(text:'Email: abcdcompany@domain.com' ),
+                    TextSmallWhite(text:'Mob: 90847676674')
+                  ],),
               );
             }
 

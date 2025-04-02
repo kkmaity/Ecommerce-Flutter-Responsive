@@ -33,6 +33,7 @@ class MostPopularProduct extends StatelessWidget{
           itemBuilder: (context, index) {
             return SizedBox(width:200,child: ProductItem(title: products[index].title,cost: products[index].cost,imageUrl: products[index].imageUrl,rating: products[index].rating,),);
           },
+
         ),
       ),
 

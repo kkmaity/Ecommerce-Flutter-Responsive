@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:makemefine/component/home/carousel_home.dart';
 import 'package:makemefine/component/navbar_web.dart';
-import 'package:makemefine/utils/colors.dart';
-import '../component/home/branding_details.dart';
-import '../component/home/footer.dart';
-import '../component/home/most_popular_product.dart';
-import '../component/home/season_top_product.dart';
-import '../component/txt_medium.dart';
-import '../component/widgets/custom_painter.dart';
+import 'account_page.dart';
+import 'cart_page.dart';
+import 'categories_page.dart';
+import 'dashboard.dart';
+
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -17,171 +14,44 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int _selectedIndex = 0;
+
+  final List<Widget> _pages = [
+    const DashboardPage(),
+    const CategoriesPage(),
+    const CartPage(),
+    const AccountPage(),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        title: NavbarWeb(),
+        title: NavbarWeb(selectedIndex: _selectedIndex,),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            SizedBox(height: 10),
-            Carousel(),
-            SizedBox(height: 30),
-            Center(child: Text("Top Categories",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 29,color:AppColors.black60),),),
-            SizedBox(height: 10),
+      body: _pages[_selectedIndex],
 
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                width: 100,
-                height: 50,
-                decoration: BoxDecoration(
-                  color: AppColors.grey5, // Solid color
-                  borderRadius: BorderRadius.circular(4), // Rounded corners
-                ),
-                // padding: EdgeInsets.only(left: 20,right: 20,top: 8,bottom: 8),
-
-                child: Center(
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Image.asset('assets/icon/necklace.png',height: 24,width: 24,),
-                            SizedBox(width: 5,),
-                            Text('Necklace')
-                          ],
-                        ),
-
-                        Card(margin: EdgeInsets.only(top: 5,bottom: 5),color: AppColors.footerPink,child: SizedBox(height: 2,width: 50,),)
-
-                      ]
-                  ),
-                ),
-              ),
-                SizedBox(width: 10,),
-                Container(
-                width: 100,
-                height: 50,
-                decoration: BoxDecoration(
-                  color: AppColors.grey5, // Solid color
-                  borderRadius: BorderRadius.circular(4), // Rounded corners
-                ),
-                // padding: EdgeInsets.only(left: 20,right: 20,top: 8,bottom: 8),
-
-                child: Center(
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Image.asset('assets/icon/earrings.png',height: 24,width: 24,),
-                            SizedBox(width: 5,),
-                            Text('Earrings')
-                          ],
-                        ),
-
-                        Card(margin: EdgeInsets.only(top: 5,bottom: 5),color: AppColors.footerPink,child: SizedBox(height: 2,width: 50,),)
-
-                      ]
-                  ),
-                ),
-              ),
-                SizedBox(width: 10,),
-                Container(
-                width: 130,
-                height: 50,
-                decoration: BoxDecoration(
-                  color: AppColors.grey5, // Solid color
-                  borderRadius: BorderRadius.circular(4), // Rounded corners
-                ),
-                // padding: EdgeInsets.only(left: 20,right: 20,top: 8,bottom: 8),
-
-                child: Center(
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Image.asset('assets/icon/pearl_necklace.png',height: 24,width: 24,),
-                            SizedBox(width: 5,),
-                            Text('Pearl Necklace')
-                          ],
-                        ),
-
-                        Card(margin: EdgeInsets.only(top: 5,bottom: 5),color: AppColors.footerPink,child: SizedBox(height: 2,width: 50,),)
-
-                      ]
-                  ),
-                ),
-              ),
-                SizedBox(width: 10,),
-                Container(
-                width: 130,
-                height: 50,
-                decoration: BoxDecoration(
-                  color: AppColors.grey5, // Solid color
-                  borderRadius: BorderRadius.circular(4), // Rounded corners
-                ),
-                // padding: EdgeInsets.only(left: 20,right: 20,top: 8,bottom: 8),
-
-                child: Center(
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Image.asset('assets/icon/wedding_ring.png',height: 24,width: 24,),
-                            SizedBox(width: 5,),
-                            Text('Wedding Ring')
-                          ],
-                        ),
-
-                        Card(margin: EdgeInsets.only(top: 5,bottom: 5),color: AppColors.footerPink,child: SizedBox(height: 2,width: 50,),)
-
-                      ]
-                  ),
-                ),
-              )],
-            ),
-
-            SizedBox(height: 90),
-            MostPopularProduct(),
-            SeasonTopProduct(),
-            SizedBox(height: 110),
-            SizedBox(height:400,child:  BrandingDetails(),),
-            SizedBox(height: 110),
-                Container(
-                  color: AppColors.footerPink,
-                    height:250,
-                child: Footer()),
-
-          ],
-        ),
-      ),
+      bottomNavigationBar:MediaQuery.sizeOf(context).width<600?BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.category), label: "Categories"),
+          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: "Cart"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Account"),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.blue,
+        unselectedItemColor: Colors.grey,
+        onTap: _onItemTapped,
+      ):null ,
     ));
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../screen/product_details.dart';
+
 class ProductItem extends StatelessWidget {
   final String title;
   final String cost;
@@ -15,7 +17,14 @@ class ProductItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return GestureDetector(onTap: ()=>{
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ProductDetailsPage(),
+        ),
+      )
+    },child: Card(
       elevation: 5,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Column(
@@ -64,6 +73,6 @@ class ProductItem extends StatelessWidget {
           ),
         ],
       ),
-    );
+    ),);
   }
 }
